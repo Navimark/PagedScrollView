@@ -23,6 +23,7 @@
 		F7038F37189108C700D69382 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7038F35189108C700D69382 /* HomeViewController.xib */; };
 		F7038F3A189109F000D69382 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7038F39189109F000D69382 /* CycleScrollView.m */; };
 		F7C0F32E1892427500077ABA /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C0F32D1892427500077ABA /* NSTimer+Addition.m */; };
+		F7DBB8CB18ADC25E001B1A77 /* MyPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DBB8CA18ADC25E001B1A77 /* MyPageControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		F7038F39189109F000D69382 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
 		F7C0F32C1892427500077ABA /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
 		F7C0F32D1892427500077ABA /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
+		F7DBB8C918ADC25E001B1A77 /* MyPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageControl.h; sourceTree = "<group>"; };
+		F7DBB8CA18ADC25E001B1A77 /* MyPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,8 @@
 		F7038F32189108B500D69382 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F7DBB8C918ADC25E001B1A77 /* MyPageControl.h */,
+				F7DBB8CA18ADC25E001B1A77 /* MyPageControl.m */,
 				F7038F33189108C700D69382 /* HomeViewController.h */,
 				F7038F34189108C700D69382 /* HomeViewController.m */,
 				F7038F35189108C700D69382 /* HomeViewController.xib */,
@@ -268,6 +273,7 @@
 			files = (
 				F7038F14189108A100D69382 /* AppDelegate.m in Sources */,
 				F7038F10189108A100D69382 /* main.m in Sources */,
+				F7DBB8CB18ADC25E001B1A77 /* MyPageControl.m in Sources */,
 				F7038F3A189109F000D69382 /* CycleScrollView.m in Sources */,
 				F7C0F32E1892427500077ABA /* NSTimer+Addition.m in Sources */,
 				F7038F36189108C700D69382 /* HomeViewController.m in Sources */,

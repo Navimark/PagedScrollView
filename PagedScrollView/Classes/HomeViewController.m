@@ -40,12 +40,11 @@
     
     self.mainScorllView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 100, 320, 300) animationDuration:2];
     self.mainScorllView.backgroundColor = [[UIColor purpleColor] colorWithAlphaComponent:0.1];
-    
-    self.mainScorllView.fetchContentViewAtIndex = ^UIView *(NSInteger pageIndex){
-        return viewsArray[pageIndex];
-    };
     self.mainScorllView.totalPagesCount = ^NSInteger(void){
         return 5;
+    };
+    self.mainScorllView.fetchContentViewAtIndex = ^UIView *(NSInteger pageIndex){
+        return viewsArray[pageIndex];
     };
     self.mainScorllView.TapActionBlock = ^(NSInteger pageIndex){
         NSLog(@"点击了第%d个",pageIndex);

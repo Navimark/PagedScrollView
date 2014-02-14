@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A6145031-1B59-4DD6-B6A8-37D568363694</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PagedScrollView</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>20D782C5-8695-4008-A842-A10CF98CB5DD</key>
+		<string>https://github.com/iOSNerd/PagedScrollView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PagedScrollView.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>20D782C5-8695-4008-A842-A10CF98CB5DD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/iOSNerd/PagedScrollView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>20D782C5-8695-4008-A842-A10CF98CB5DD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>20D782C5-8695-4008-A842-A10CF98CB5DD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PagedScrollView</string>
+		</dict>
+	</array>
+</dict>
+</plist>

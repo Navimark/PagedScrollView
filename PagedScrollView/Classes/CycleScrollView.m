@@ -8,6 +8,7 @@
 
 #import "CycleScrollView.h"
 #import "NSTimer+Addition.h"
+#import "MyPageControl.h"
 
 @interface CycleScrollView () <UIScrollViewDelegate>
 
@@ -19,17 +20,54 @@
 @property (nonatomic , strong) NSTimer *animationTimer;
 @property (nonatomic , assign) NSTimeInterval animationDuration;
 
+@property (nonatomic , strong) MyPageControl *pageControl;
+
 @end
 
 @implementation CycleScrollView
 
+- (MyPageControl *)pageControl
+{
+    //少于或者等于一页的话，没有必要显示pageControl
+    if (self.totalPageCount > 1) {
+        if (!_pageControl) {
+            NSInteger totalPageCounts = self.totalPageCount;
+            CGFloat dotGapWidth = 8.0;
+            UIImage *normalDotImage = [UIImage imageNamed:@"page_state_normal"];
+            CGFloat pageControlWidth = totalPageCounts * normalDotImage.size.width + (totalPageCounts - 1) * dotGapWidth;
+            CGRect pageControlFrame = CGRectMake(CGRectGetMidX(self.scrollView.frame) - 0.5 * pageControlWidth , 0.9 * CGRectGetHeight(self.scrollView.frame), pageControlWidth, normalDotImage.size.height);
+            //        NSLog(@"NSStringFromCGRect(pageControlFrame) = %@",NSStringFromCGRect(pageControlFrame));
+            _pageControl = [[MyPageControl alloc] initWithFrame:pageControlFrame
+                                                    normalImage:normalDotImage
+                                               highlightedImage:[UIImage imageNamed:@"page_state_highlight"]
+                                                     dotsNumber:totalPageCounts sideLength:dotGapWidth dotsGap:dotGapWidth];
+            _pageControl.hidden = NO;
+        }
+    }
+    return _pageControl;
+}
+
 - (void)setTotalPagesCount:(NSInteger (^)(void))totalPagesCount
 {
-    _totalPageCount = totalPagesCount();
+    self.totalPageCount = totalPagesCount();
     if (_totalPageCount > 0) {
         [self configContentViews];
         [self.animationTimer resumeTimerAfterTimeInterval:self.animationDuration];
+        [self addSubview:self.pageControl];
     }
+}
+
+- (void)setFetchContentViewAtIndex:(UIView *(^)(NSInteger index))fetchContentViewAtIndex
+{
+    _fetchContentViewAtIndex = fetchContentViewAtIndex;
+    //加入第一页
+    [self configContentViews];
+}
+
+- (void)setCurrentPageIndex:(NSInteger)currentPageIndex
+{
+    _currentPageIndex = currentPageIndex;
+    [self.pageControl setCurrentPage:_currentPageIndex];
 }
 
 - (id)initWithFrame:(CGRect)frame animationDuration:(NSTimeInterval)animationDuration
@@ -135,12 +173,12 @@
     int contentOffsetX = scrollView.contentOffset.x;
     if(contentOffsetX >= (2 * CGRectGetWidth(scrollView.frame))) {
         self.currentPageIndex = [self getValidNextPageIndexWithPageIndex:self.currentPageIndex + 1];
-        NSLog(@"next，当前页:%d",self.currentPageIndex);
+        //        NSLog(@"next，当前页:%d",self.currentPageIndex);
         [self configContentViews];
     }
     if(contentOffsetX <= 0) {
         self.currentPageIndex = [self getValidNextPageIndexWithPageIndex:self.currentPageIndex - 1];
-        NSLog(@"previous，当前页:%d",self.currentPageIndex);
+        //        NSLog(@"previous，当前页:%d",self.currentPageIndex);
         [self configContentViews];
     }
 }
@@ -167,12 +205,12 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 @end
