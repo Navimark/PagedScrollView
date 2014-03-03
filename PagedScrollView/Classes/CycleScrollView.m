@@ -33,13 +33,13 @@
         if (!_pageControl) {
             NSInteger totalPageCounts = self.totalPageCount;
             CGFloat dotGapWidth = 8.0;
-            UIImage *normalDotImage = [UIImage imageNamed:@"page_state_normal"];
+            UIImage *normalDotImage = [UIImage imageNamed:@"home_template_n"];
             CGFloat pageControlWidth = totalPageCounts * normalDotImage.size.width + (totalPageCounts - 1) * dotGapWidth;
             CGRect pageControlFrame = CGRectMake(CGRectGetMidX(self.scrollView.frame) - 0.5 * pageControlWidth , 0.9 * CGRectGetHeight(self.scrollView.frame), pageControlWidth, normalDotImage.size.height);
             //        NSLog(@"NSStringFromCGRect(pageControlFrame) = %@",NSStringFromCGRect(pageControlFrame));
             _pageControl = [[MyPageControl alloc] initWithFrame:pageControlFrame
                                                     normalImage:normalDotImage
-                                               highlightedImage:[UIImage imageNamed:@"page_state_highlight"]
+                                               highlightedImage:[UIImage imageNamed:@"home_template_h"]
                                                      dotsNumber:totalPageCounts sideLength:dotGapWidth dotsGap:dotGapWidth];
             _pageControl.hidden = NO;
         }
@@ -114,6 +114,9 @@
     NSInteger counter = 0;
     for (UIView *contentView in self.contentViews) {
         contentView.userInteractionEnabled = YES;
+        UILongPressGestureRecognizer *longTapGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longTapGestureAction:)];
+        [contentView addGestureRecognizer:longTapGesture];
+        
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(contentViewTapAction:)];
         [contentView addGestureRecognizer:tapGesture];
         CGRect rightRect = contentView.frame;
@@ -190,6 +193,18 @@
 
 #pragma mark -
 #pragma mark - 响应事件
+
+- (void)longTapGestureAction:(UILongPressGestureRecognizer *)tapGesture
+{
+    if (tapGesture.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"UIGestureRecognizerStateBegan");
+        [self.animationTimer pauseTimer];
+    }
+    if (tapGesture.state == UIGestureRecognizerStateEnded) {
+        [self.animationTimer resumeTimer];
+        NSLog(@"UIGestureRecognizerStateEnded");
+    }
+}
 
 - (void)animationTimerDidFired:(NSTimer *)timer
 {
