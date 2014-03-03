@@ -33,13 +33,13 @@
         if (!_pageControl) {
             NSInteger totalPageCounts = self.totalPageCount;
             CGFloat dotGapWidth = 8.0;
-            UIImage *normalDotImage = [UIImage imageNamed:@"home_template_n"];
+            UIImage *normalDotImage = [UIImage imageNamed:@"page_state_normal"];
             CGFloat pageControlWidth = totalPageCounts * normalDotImage.size.width + (totalPageCounts - 1) * dotGapWidth;
             CGRect pageControlFrame = CGRectMake(CGRectGetMidX(self.scrollView.frame) - 0.5 * pageControlWidth , 0.9 * CGRectGetHeight(self.scrollView.frame), pageControlWidth, normalDotImage.size.height);
             //        NSLog(@"NSStringFromCGRect(pageControlFrame) = %@",NSStringFromCGRect(pageControlFrame));
             _pageControl = [[MyPageControl alloc] initWithFrame:pageControlFrame
                                                     normalImage:normalDotImage
-                                               highlightedImage:[UIImage imageNamed:@"home_template_h"]
+                                               highlightedImage:[UIImage imageNamed:@"page_state_highlight"]
                                                      dotsNumber:totalPageCounts sideLength:dotGapWidth dotsGap:dotGapWidth];
             _pageControl.hidden = NO;
         }
