@@ -33,13 +33,13 @@
         if (!_pageControl) {
             NSInteger totalPageCounts = self.totalPageCount;
             CGFloat dotGapWidth = 8.0;
-            UIImage *normalDotImage = [UIImage imageNamed:@"page_state_normal"];
+            UIImage *normalDotImage = [UIImage imageNamed:@"home_template_n"];
             CGFloat pageControlWidth = totalPageCounts * normalDotImage.size.width + (totalPageCounts - 1) * dotGapWidth;
             CGRect pageControlFrame = CGRectMake(CGRectGetMidX(self.scrollView.frame) - 0.5 * pageControlWidth , 0.9 * CGRectGetHeight(self.scrollView.frame), pageControlWidth, normalDotImage.size.height);
             //        NSLog(@"NSStringFromCGRect(pageControlFrame) = %@",NSStringFromCGRect(pageControlFrame));
             _pageControl = [[MyPageControl alloc] initWithFrame:pageControlFrame
                                                     normalImage:normalDotImage
-                                               highlightedImage:[UIImage imageNamed:@"page_state_highlight"]
+                                               highlightedImage:[UIImage imageNamed:@"home_template_h"]
                                                      dotsNumber:totalPageCounts sideLength:dotGapWidth dotsGap:dotGapWidth];
             _pageControl.hidden = NO;
         }
@@ -51,8 +51,14 @@
 {
     self.totalPageCount = totalPagesCount();
     if (_totalPageCount > 0) {
+        if (self.totalPageCount > 1) {
+            self.scrollView.scrollEnabled = YES;
+            self.scrollView.contentOffset = CGPointMake(CGRectGetWidth(self.scrollView.frame), 0);
+            [self.animationTimer resumeTimerAfterTimeInterval:self.animationDuration];
+        } else {
+            self.scrollView.scrollEnabled = NO;
+        }
         [self configContentViews];
-        [self.animationTimer resumeTimerAfterTimeInterval:self.animationDuration];
         [self addSubview:self.pageControl];
     }
 }
@@ -95,7 +101,7 @@
         self.scrollView.contentMode = UIViewContentModeCenter;
         self.scrollView.contentSize = CGSizeMake(3 * CGRectGetWidth(self.scrollView.frame), CGRectGetHeight(self.scrollView.frame));
         self.scrollView.delegate = self;
-        self.scrollView.contentOffset = CGPointMake(CGRectGetWidth(self.scrollView.frame), 0);
+        //        self.scrollView.contentOffset = CGPointMake(CGRectGetWidth(self.scrollView.frame), 0);
         self.scrollView.pagingEnabled = YES;
         [self addSubview:self.scrollView];
         self.currentPageIndex = 0;
@@ -125,7 +131,9 @@
         contentView.frame = rightRect;
         [self.scrollView addSubview:contentView];
     }
-    [_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width, 0)];
+    if (self.totalPageCount > 1) {
+        [_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width, 0)];
+    }
 }
 
 /**
@@ -141,9 +149,22 @@
     [self.contentViews removeAllObjects];
     
     if (self.fetchContentViewAtIndex) {
-        [self.contentViews addObject:self.fetchContentViewAtIndex(previousPageIndex)];
-        [self.contentViews addObject:self.fetchContentViewAtIndex(_currentPageIndex)];
-        [self.contentViews addObject:self.fetchContentViewAtIndex(rearPageIndex)];
+        id set = (self.totalPageCount == 1)?[NSSet setWithObjects:@(previousPageIndex),@(_currentPageIndex),@(rearPageIndex), nil]:@[@(previousPageIndex),@(_currentPageIndex),@(rearPageIndex)];
+        for (NSNumber *tempNumber in set) {
+            NSInteger tempIndex = [tempNumber integerValue];
+            if ([self isValidArrayIndex:tempIndex]) {
+                [self.contentViews addObject:self.fetchContentViewAtIndex(tempIndex)];
+            }
+        }
+    }
+}
+
+- (BOOL)isValidArrayIndex:(NSInteger)index
+{
+    if (index >= 0 && index <= self.totalPageCount - 1) {
+        return YES;
+    } else {
+        return NO;
     }
 }
 
