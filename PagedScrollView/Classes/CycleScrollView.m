@@ -194,7 +194,6 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     [self.animationTimer resumeTimerAfterTimeInterval:self.animationDuration];
-//    scrollViewStartContentOffsetX = scrollView.contentOffset.x;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
