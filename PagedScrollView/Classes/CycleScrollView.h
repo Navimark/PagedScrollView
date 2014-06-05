@@ -22,13 +22,15 @@
 - (id)initWithFrame:(CGRect)frame animationDuration:(NSTimeInterval)animationDuration;
 
 /**
- 数据源：获取总的page个数
+ 数据源：获取总的page个数，如果少于2个，不自动滚动
  **/
 @property (nonatomic , copy) NSInteger (^totalPagesCount)(void);
+
 /**
  数据源：获取第pageIndex个位置的contentView
  **/
 @property (nonatomic , copy) UIView *(^fetchContentViewAtIndex)(NSInteger pageIndex);
+
 /**
  当点击的时候，执行的block
  **/

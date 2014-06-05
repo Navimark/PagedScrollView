@@ -9,9 +9,11 @@
 #import "HomeViewController.h"
 #import "CycleScrollView.h"
 
+static const NSInteger kTotalPageCount = 5;
+
 @interface HomeViewController ()
 
-@property (nonatomic , retain) CycleScrollView *mainScorllView;
+@property (nonatomic , strong) CycleScrollView *mainScorllView;
 
 @end
 
@@ -32,14 +34,15 @@
     // Do any additional setup after loading the view from its nib.
     NSMutableArray *viewsArray = [@[] mutableCopy];
     NSArray *colorArray = @[[UIColor cyanColor],[UIColor blueColor],[UIColor greenColor],[UIColor yellowColor],[UIColor purpleColor]];
-    for (int i = 0; i < 2; ++i) {
+    for (int i = 0; i < kTotalPageCount; ++i) {
         UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 300)];
         tempLabel.backgroundColor = [(UIColor *)[colorArray objectAtIndex:i] colorWithAlphaComponent:0.5];
         [viewsArray addObject:tempLabel];
     }
     
-    self.mainScorllView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 100, 320, 300) animationDuration:2];
+    self.mainScorllView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 100, 320, 300) animationDuration:3];
     self.mainScorllView.backgroundColor = [[UIColor purpleColor] colorWithAlphaComponent:0.1];
+    
     self.mainScorllView.totalPagesCount = ^NSInteger(void){
         return viewsArray.count;
     };
@@ -47,7 +50,7 @@
         return viewsArray[pageIndex];
     };
     self.mainScorllView.TapActionBlock = ^(NSInteger pageIndex){
-        NSLog(@"点击了第%d个",pageIndex);
+        NSLog(@"点击了第%ld个",pageIndex);
     };
     [self.view addSubview:self.mainScorllView];
 }

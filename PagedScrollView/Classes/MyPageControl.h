@@ -14,6 +14,7 @@
 @protocol MyPageControlDelegate <NSObject>
 
 @optional
+
 - (void)pageControlDidStopAtIndex:(NSInteger)index;
 
 @end

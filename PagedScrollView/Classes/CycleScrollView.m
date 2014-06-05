@@ -11,7 +11,9 @@
 #import "MyPageControl.h"
 
 @interface CycleScrollView () <UIScrollViewDelegate>
-
+{
+    CGFloat scrollViewStartContentOffsetX;
+}
 @property (nonatomic , assign) NSInteger currentPageIndex;
 @property (nonatomic , assign) NSInteger totalPageCount;
 @property (nonatomic , strong) NSMutableArray *contentViews;
@@ -33,13 +35,14 @@
         if (!_pageControl) {
             NSInteger totalPageCounts = self.totalPageCount;
             CGFloat dotGapWidth = 8.0;
-            UIImage *normalDotImage = [UIImage imageNamed:@"home_template_n"];
+            UIImage *normalDotImage = [UIImage imageNamed:@"page_state_normal"];
+            UIImage *highlightDotImage = [UIImage imageNamed:@"page_state_highlight"];
             CGFloat pageControlWidth = totalPageCounts * normalDotImage.size.width + (totalPageCounts - 1) * dotGapWidth;
             CGRect pageControlFrame = CGRectMake(CGRectGetMidX(self.scrollView.frame) - 0.5 * pageControlWidth , 0.9 * CGRectGetHeight(self.scrollView.frame), pageControlWidth, normalDotImage.size.height);
-            //        NSLog(@"NSStringFromCGRect(pageControlFrame) = %@",NSStringFromCGRect(pageControlFrame));
+            
             _pageControl = [[MyPageControl alloc] initWithFrame:pageControlFrame
                                                     normalImage:normalDotImage
-                                               highlightedImage:[UIImage imageNamed:@"home_template_h"]
+                                               highlightedImage:highlightDotImage
                                                      dotsNumber:totalPageCounts sideLength:dotGapWidth dotsGap:dotGapWidth];
             _pageControl.hidden = NO;
         }
@@ -50,7 +53,7 @@
 - (void)setTotalPagesCount:(NSInteger (^)(void))totalPagesCount
 {
     self.totalPageCount = totalPagesCount();
-    if (_totalPageCount > 0) {
+    if (self.totalPageCount > 0) {
         if (self.totalPageCount > 1) {
             self.scrollView.scrollEnabled = YES;
             self.scrollView.contentOffset = CGPointMake(CGRectGetWidth(self.scrollView.frame), 0);
@@ -101,7 +104,6 @@
         self.scrollView.contentMode = UIViewContentModeCenter;
         self.scrollView.contentSize = CGSizeMake(3 * CGRectGetWidth(self.scrollView.frame), CGRectGetHeight(self.scrollView.frame));
         self.scrollView.delegate = self;
-        //        self.scrollView.contentOffset = CGPointMake(CGRectGetWidth(self.scrollView.frame), 0);
         self.scrollView.pagingEnabled = YES;
         [self addSubview:self.scrollView];
         self.currentPageIndex = 0;
@@ -143,6 +145,7 @@
 {
     NSInteger previousPageIndex = [self getValidNextPageIndexWithPageIndex:self.currentPageIndex - 1];
     NSInteger rearPageIndex = [self getValidNextPageIndexWithPageIndex:self.currentPageIndex + 1];
+
     if (self.contentViews == nil) {
         self.contentViews = [@[] mutableCopy];
     }
@@ -184,17 +187,29 @@
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
+    scrollViewStartContentOffsetX = scrollView.contentOffset.x;
     [self.animationTimer pauseTimer];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     [self.animationTimer resumeTimerAfterTimeInterval:self.animationDuration];
+//    scrollViewStartContentOffsetX = scrollView.contentOffset.x;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    int contentOffsetX = scrollView.contentOffset.x;
+    CGFloat contentOffsetX = scrollView.contentOffset.x;
+    if (self.totalPageCount == 2) {
+        if (scrollViewStartContentOffsetX < contentOffsetX) {
+            UIView *tempView = (UIView *)[self.contentViews lastObject];
+            tempView.frame = (CGRect){{2 * CGRectGetWidth(scrollView.frame),0},tempView.frame.size};
+        } else if (scrollViewStartContentOffsetX > contentOffsetX) {
+            UIView *tempView = (UIView *)[self.contentViews firstObject];
+            tempView.frame = (CGRect){{0,0},tempView.frame.size};
+        }
+    }
+    
     if(contentOffsetX >= (2 * CGRectGetWidth(scrollView.frame))) {
         self.currentPageIndex = [self getValidNextPageIndexWithPageIndex:self.currentPageIndex + 1];
         //        NSLog(@"next，当前页:%d",self.currentPageIndex);
