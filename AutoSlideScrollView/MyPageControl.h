@@ -20,17 +20,9 @@
 @end
 
 @interface MyPageControl : UIView 
-{
-    UIImage         *_normalDotImage;
-    UIImage         *_highlightedDotImage;
-    NSInteger       __pageNumbers;
-    float           __dotsSize;
-    NSInteger       __dotsGap;
-    id<MyPageControlDelegate> delegate;
-}
 
 @property (nonatomic , assign)NSInteger pageNumbers;
-@property (nonatomic , assign) IBOutlet id<MyPageControlDelegate> delegate;
+@property (nonatomic , weak)id<MyPageControlDelegate> delegate;
 - (id)initWithFrame:(CGRect)frame
         normalImage:(UIImage *)nImage
    highlightedImage:(UIImage *)hImage

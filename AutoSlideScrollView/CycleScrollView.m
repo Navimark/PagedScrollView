@@ -35,8 +35,10 @@
         if (!_pageControl) {
             NSInteger totalPageCounts = self.totalPageCount;
             CGFloat dotGapWidth = 8.0;
-            UIImage *normalDotImage = [UIImage imageNamed:@"page_state_normal"];
-            UIImage *highlightDotImage = [UIImage imageNamed:@"page_state_highlight"];
+            NSString *normalImageName = [@"AutoSlideScrollView.bundle" stringByAppendingPathComponent:@"page_state_normal.png"];
+            NSString *highlightImageName = [@"AutoSlideScrollView.bundle" stringByAppendingPathComponent:@"page_state_highlight.png"];
+            UIImage *normalDotImage = [UIImage imageNamed:normalImageName];
+            UIImage *highlightDotImage = [UIImage imageNamed:highlightImageName];
             CGFloat pageControlWidth = totalPageCounts * normalDotImage.size.width + (totalPageCounts - 1) * dotGapWidth;
             CGRect pageControlFrame = CGRectMake(CGRectGetMidX(self.scrollView.frame) - 0.5 * pageControlWidth , 0.9 * CGRectGetHeight(self.scrollView.frame), pageControlWidth, normalDotImage.size.height);
             
@@ -84,6 +86,29 @@
     self = [self initWithFrame:frame];
     if (animationDuration > 0.0) {
         self.animationTimer = [NSTimer scheduledTimerWithTimeInterval:(self.animationDuration = animationDuration)
+                                                               target:self
+                                                             selector:@selector(animationTimerDidFired:)
+                                                             userInfo:nil
+                                                              repeats:YES];
+        [self.animationTimer pauseTimer];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder]) {
+        self.autoresizesSubviews = YES;
+        self.scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
+        self.scrollView.autoresizingMask = 0xFF;
+        self.scrollView.contentMode = UIViewContentModeCenter;
+        self.scrollView.contentSize = CGSizeMake(3 * CGRectGetWidth(self.scrollView.frame), CGRectGetHeight(self.scrollView.frame));
+        self.scrollView.delegate = self;
+        self.scrollView.pagingEnabled = YES;
+        [self addSubview:self.scrollView];
+        self.scrollView.showsHorizontalScrollIndicator = NO;
+        self.currentPageIndex = 0;
+        self.animationTimer = [NSTimer scheduledTimerWithTimeInterval:(self.animationDuration = 3)
                                                                target:self
                                                              selector:@selector(animationTimerDidFired:)
                                                              userInfo:nil
@@ -145,7 +170,7 @@
 {
     NSInteger previousPageIndex = [self getValidNextPageIndexWithPageIndex:self.currentPageIndex - 1];
     NSInteger rearPageIndex = [self getValidNextPageIndexWithPageIndex:self.currentPageIndex + 1];
-
+    
     if (self.contentViews == nil) {
         self.contentViews = [@[] mutableCopy];
     }
@@ -232,12 +257,12 @@
 - (void)longTapGestureAction:(UILongPressGestureRecognizer *)tapGesture
 {
     if (tapGesture.state == UIGestureRecognizerStateBegan) {
-        NSLog(@"UIGestureRecognizerStateBegan");
+//        NSLog(@"UIGestureRecognizerStateBegan");
         [self.animationTimer pauseTimer];
     }
     if (tapGesture.state == UIGestureRecognizerStateEnded) {
         [self.animationTimer resumeTimer];
-        NSLog(@"UIGestureRecognizerStateEnded");
+//        NSLog(@"UIGestureRecognizerStateEnded");
     }
 }
 
