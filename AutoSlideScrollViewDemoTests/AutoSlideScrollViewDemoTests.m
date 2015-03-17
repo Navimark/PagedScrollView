@@ -1,6 +1,6 @@
 //
-//  PagedScrollViewTests.m
-//  PagedScrollViewTests
+//  AutoSlideScrollViewDemoTests.m
+//  AutoSlideScrollViewDemoTests
 //
 //  Created by 陈政 on 14-1-23.
 //  Copyright (c) 2014年 Apple Inc. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface PagedScrollViewTests : XCTestCase
+@interface AutoSlideScrollViewDemoTests : XCTestCase
 
 @end
 
-@implementation PagedScrollViewTests
+@implementation AutoSlideScrollViewDemoTests
 
 - (void)setUp
 {

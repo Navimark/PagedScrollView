@@ -1,0 +1,8 @@
+*.xcworkspacedata
+*.xccheckout
+*.xcsettings
+*.xcbkptlist
+*.xcscheme
+xcschememanagement.plist
+
+

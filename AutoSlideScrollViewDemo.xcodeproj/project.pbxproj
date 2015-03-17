@@ -22,7 +22,7 @@
 		F7038F1E189108A100D69382 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7038F03189108A100D69382 /* Foundation.framework */; };
 		F7038F1F189108A100D69382 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7038F07189108A100D69382 /* UIKit.framework */; };
 		F7038F27189108A100D69382 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7038F25189108A100D69382 /* InfoPlist.strings */; };
-		F7038F29189108A100D69382 /* PagedScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7038F28189108A100D69382 /* PagedScrollViewTests.m */; };
+		F7038F29189108A100D69382 /* AutoSlideScrollViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7038F28189108A100D69382 /* AutoSlideScrollViewDemoTests.m */; };
 		F7038F36189108C700D69382 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7038F34189108C700D69382 /* HomeViewController.m */; };
 		F7038F37189108C700D69382 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7038F35189108C700D69382 /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
@@ -45,22 +45,22 @@
 		5D2FBF381AB7FE0F004E52C5 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
 		5D2FBF391AB7FE0F004E52C5 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
 		5D2FBF3B1AB7FE0F004E52C5 /* AutoSlideScrollView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AutoSlideScrollView.bundle; sourceTree = "<group>"; };
-		F7038F00189108A100D69382 /* PagedScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PagedScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7038F00189108A100D69382 /* AutoSlideScrollViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoSlideScrollViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7038F03189108A100D69382 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F7038F05189108A100D69382 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F7038F07189108A100D69382 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		F7038F0B189108A100D69382 /* PagedScrollView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PagedScrollView-Info.plist"; sourceTree = "<group>"; };
+		F7038F0B189108A100D69382 /* AutoSlideScrollViewDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoSlideScrollViewDemo-Info.plist"; sourceTree = "<group>"; };
 		F7038F0D189108A100D69382 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F7038F0F189108A100D69382 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F7038F11189108A100D69382 /* PagedScrollView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PagedScrollView-Prefix.pch"; sourceTree = "<group>"; };
+		F7038F11189108A100D69382 /* AutoSlideScrollViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutoSlideScrollViewDemo-Prefix.pch"; sourceTree = "<group>"; };
 		F7038F12189108A100D69382 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F7038F13189108A100D69382 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F7038F15189108A100D69382 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F7038F1B189108A100D69382 /* PagedScrollViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PagedScrollViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7038F1B189108A100D69382 /* AutoSlideScrollViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoSlideScrollViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7038F1C189108A100D69382 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		F7038F24189108A100D69382 /* PagedScrollViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PagedScrollViewTests-Info.plist"; sourceTree = "<group>"; };
+		F7038F24189108A100D69382 /* AutoSlideScrollViewDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoSlideScrollViewDemoTests-Info.plist"; sourceTree = "<group>"; };
 		F7038F26189108A100D69382 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F7038F28189108A100D69382 /* PagedScrollViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagedScrollViewTests.m; sourceTree = "<group>"; };
+		F7038F28189108A100D69382 /* AutoSlideScrollViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoSlideScrollViewDemoTests.m; sourceTree = "<group>"; };
 		F7038F33189108C700D69382 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		F7038F34189108C700D69382 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		F7038F35189108C700D69382 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -116,8 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				5D2FBF331AB7FE0F004E52C5 /* AutoSlideScrollView */,
-				F7038F09189108A100D69382 /* PagedScrollView */,
-				F7038F22189108A100D69382 /* PagedScrollViewTests */,
+				F7038F09189108A100D69382 /* AutoSlideScrollViewDemo */,
+				F7038F22189108A100D69382 /* AutoSlideScrollViewDemoTests */,
 				F7038F02189108A100D69382 /* Frameworks */,
 				F7038F01189108A100D69382 /* Products */,
 			);
@@ -126,8 +126,8 @@
 		F7038F01189108A100D69382 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F7038F00189108A100D69382 /* PagedScrollView.app */,
-				F7038F1B189108A100D69382 /* PagedScrollViewTests.xctest */,
+				F7038F00189108A100D69382 /* AutoSlideScrollViewDemo.app */,
+				F7038F1B189108A100D69382 /* AutoSlideScrollViewDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F7038F09189108A100D69382 /* PagedScrollView */ = {
+		F7038F09189108A100D69382 /* AutoSlideScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
 				F7038F32189108B500D69382 /* Classes */,
@@ -152,33 +152,33 @@
 				F7038F15189108A100D69382 /* Images.xcassets */,
 				F7038F0A189108A100D69382 /* Supporting Files */,
 			);
-			path = PagedScrollView;
+			path = AutoSlideScrollViewDemo;
 			sourceTree = "<group>";
 		};
 		F7038F0A189108A100D69382 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F7038F0B189108A100D69382 /* PagedScrollView-Info.plist */,
+				F7038F0B189108A100D69382 /* AutoSlideScrollViewDemo-Info.plist */,
 				F7038F0C189108A100D69382 /* InfoPlist.strings */,
 				F7038F0F189108A100D69382 /* main.m */,
-				F7038F11189108A100D69382 /* PagedScrollView-Prefix.pch */,
+				F7038F11189108A100D69382 /* AutoSlideScrollViewDemo-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F7038F22189108A100D69382 /* PagedScrollViewTests */ = {
+		F7038F22189108A100D69382 /* AutoSlideScrollViewDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				F7038F28189108A100D69382 /* PagedScrollViewTests.m */,
+				F7038F28189108A100D69382 /* AutoSlideScrollViewDemoTests.m */,
 				F7038F23189108A100D69382 /* Supporting Files */,
 			);
-			path = PagedScrollViewTests;
+			path = AutoSlideScrollViewDemoTests;
 			sourceTree = "<group>";
 		};
 		F7038F23189108A100D69382 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F7038F24189108A100D69382 /* PagedScrollViewTests-Info.plist */,
+				F7038F24189108A100D69382 /* AutoSlideScrollViewDemoTests-Info.plist */,
 				F7038F25189108A100D69382 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -197,9 +197,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F7038EFF189108A100D69382 /* PagedScrollView */ = {
+		F7038EFF189108A100D69382 /* AutoSlideScrollViewDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F7038F2C189108A100D69382 /* Build configuration list for PBXNativeTarget "PagedScrollView" */;
+			buildConfigurationList = F7038F2C189108A100D69382 /* Build configuration list for PBXNativeTarget "AutoSlideScrollViewDemo" */;
 			buildPhases = (
 				F7038EFC189108A100D69382 /* Sources */,
 				F7038EFD189108A100D69382 /* Frameworks */,
@@ -209,14 +209,14 @@
 			);
 			dependencies = (
 			);
-			name = PagedScrollView;
+			name = AutoSlideScrollViewDemo;
 			productName = PagedScrollView;
-			productReference = F7038F00189108A100D69382 /* PagedScrollView.app */;
+			productReference = F7038F00189108A100D69382 /* AutoSlideScrollViewDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F7038F1A189108A100D69382 /* PagedScrollViewTests */ = {
+		F7038F1A189108A100D69382 /* AutoSlideScrollViewDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F7038F2F189108A100D69382 /* Build configuration list for PBXNativeTarget "PagedScrollViewTests" */;
+			buildConfigurationList = F7038F2F189108A100D69382 /* Build configuration list for PBXNativeTarget "AutoSlideScrollViewDemoTests" */;
 			buildPhases = (
 				F7038F17189108A100D69382 /* Sources */,
 				F7038F18189108A100D69382 /* Frameworks */,
@@ -227,9 +227,9 @@
 			dependencies = (
 				F7038F21189108A100D69382 /* PBXTargetDependency */,
 			);
-			name = PagedScrollViewTests;
+			name = AutoSlideScrollViewDemoTests;
 			productName = PagedScrollViewTests;
-			productReference = F7038F1B189108A100D69382 /* PagedScrollViewTests.xctest */;
+			productReference = F7038F1B189108A100D69382 /* AutoSlideScrollViewDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -246,7 +246,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F7038EFB189108A100D69382 /* Build configuration list for PBXProject "PagedScrollView" */;
+			buildConfigurationList = F7038EFB189108A100D69382 /* Build configuration list for PBXProject "AutoSlideScrollViewDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -258,8 +258,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F7038EFF189108A100D69382 /* PagedScrollView */,
-				F7038F1A189108A100D69382 /* PagedScrollViewTests */,
+				F7038EFF189108A100D69382 /* AutoSlideScrollViewDemo */,
+				F7038F1A189108A100D69382 /* AutoSlideScrollViewDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -304,7 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7038F29189108A100D69382 /* PagedScrollViewTests.m in Sources */,
+				F7038F29189108A100D69382 /* AutoSlideScrollViewDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +313,7 @@
 /* Begin PBXTargetDependency section */
 		F7038F21189108A100D69382 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F7038EFF189108A100D69382 /* PagedScrollView */;
+			target = F7038EFF189108A100D69382 /* AutoSlideScrollViewDemo */;
 			targetProxy = F7038F20189108A100D69382 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -416,9 +416,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PagedScrollView/PagedScrollView-Prefix.pch";
-				INFOPLIST_FILE = "PagedScrollView/PagedScrollView-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "AutoSlideScrollViewDemo/AutoSlideScrollViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "AutoSlideScrollViewDemo/AutoSlideScrollViewDemo-Info.plist";
+				PRODUCT_NAME = AutoSlideScrollViewDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -429,9 +429,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PagedScrollView/PagedScrollView-Prefix.pch";
-				INFOPLIST_FILE = "PagedScrollView/PagedScrollView-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "AutoSlideScrollViewDemo/AutoSlideScrollViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "AutoSlideScrollViewDemo/AutoSlideScrollViewDemo-Info.plist";
+				PRODUCT_NAME = AutoSlideScrollViewDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -439,7 +439,7 @@
 		F7038F30189108A100D69382 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PagedScrollView.app/PagedScrollView";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AutoSlideScrollViewDemo.app/AutoSlideScrollViewDemo";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -451,8 +451,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "PagedScrollViewTests/PagedScrollViewTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "PagedScrollViewTests/AutoSlideScrollViewDemoTests-Info.plist";
+				PRODUCT_NAME = AutoSlideScrollViewDemoTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -461,7 +461,7 @@
 		F7038F31189108A100D69382 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PagedScrollView.app/PagedScrollView";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AutoSlideScrollViewDemo.app/AutoSlideScrollViewDemo";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -469,8 +469,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PagedScrollView/PagedScrollView-Prefix.pch";
-				INFOPLIST_FILE = "PagedScrollViewTests/PagedScrollViewTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "PagedScrollViewTests/AutoSlideScrollViewDemoTests-Info.plist";
+				PRODUCT_NAME = AutoSlideScrollViewDemoTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -479,7 +479,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F7038EFB189108A100D69382 /* Build configuration list for PBXProject "PagedScrollView" */ = {
+		F7038EFB189108A100D69382 /* Build configuration list for PBXProject "AutoSlideScrollViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F7038F2A189108A100D69382 /* Debug */,
@@ -488,7 +488,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F7038F2C189108A100D69382 /* Build configuration list for PBXNativeTarget "PagedScrollView" */ = {
+		F7038F2C189108A100D69382 /* Build configuration list for PBXNativeTarget "AutoSlideScrollViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F7038F2D189108A100D69382 /* Debug */,
@@ -497,7 +497,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F7038F2F189108A100D69382 /* Build configuration list for PBXNativeTarget "PagedScrollViewTests" */ = {
+		F7038F2F189108A100D69382 /* Build configuration list for PBXNativeTarget "AutoSlideScrollViewDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F7038F30189108A100D69382 /* Debug */,
