@@ -1,7 +1,9 @@
 #PagedScrollView
 
 1.auto silde scrollview
+
 2.manual timer control
+
 3.module-designed
 
 ###
