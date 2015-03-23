@@ -1,10 +1,17 @@
-#PagedScrollView
+###About
+This scrollView usually performs as a header ad view, the features shows below,
 
-1.auto silde scrollview
+- auto silde scrollview
+- manual timer control
+- module-designed
 
-2.manual timer control
+###How to use
+- using CocoaPods with 
 
-3.module-designed
 
-###
-it's warm welcome for a bug report or a pull request.
+	pod 'AutoSlideScrollView'
+
+- copy the 'AutoSlideScrollView' folder into your project
+
+###Additional
+It's warm welcome for a bug report or a pull request!
