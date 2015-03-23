@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  AutoSlideScrollViewDemo
 //
-//  Created by 陈政 on 14-1-23.
-//  Copyright (c) 2014年 Apple Inc. All rights reserved.
+//  Created by Mike Chen on 14-1-23.
+//  Copyright (c) 2014年 __MyCompanyName__. All rights reserved.
 //
 
 #import "AppDelegate.h"
