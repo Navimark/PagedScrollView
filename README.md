@@ -7,10 +7,9 @@ This scrollView usually performs as a header ad view, the features shows below,
 
 ###How to use
 - using CocoaPods with 
-
-
-	pod 'AutoSlideScrollView'
-
+``` 
+pod 'AutoSlideScrollView'
+```
 - copy the 'AutoSlideScrollView' folder into your project
 
 ###Additional
