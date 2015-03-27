@@ -1,5 +1,5 @@
 //
-//  CycleScrollView.h
+//  AutoSlideScrollView.h
 //  AutoSlideScrollViewDemo
 //
 //  Created by Mike Chen on 14-1-23.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CycleScrollView : UIView
+@interface AutoSlideScrollView : UIView
 
 @property (nonatomic , readonly) UIScrollView *scrollView;
 /**

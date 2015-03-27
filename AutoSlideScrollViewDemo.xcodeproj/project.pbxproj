@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D2FBF3C1AB7FE0F004E52C5 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2FBF351AB7FE0F004E52C5 /* CycleScrollView.m */; };
+		5D2FBF3C1AB7FE0F004E52C5 /* AutoSlideScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2FBF351AB7FE0F004E52C5 /* AutoSlideScrollView.m */; };
 		5D2FBF3D1AB7FE0F004E52C5 /* MyPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2FBF371AB7FE0F004E52C5 /* MyPageControl.m */; };
 		5D2FBF3E1AB7FE0F004E52C5 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2FBF391AB7FE0F004E52C5 /* NSTimer+Addition.m */; };
 		5D2FBF3F1AB7FE0F004E52C5 /* AutoSlideScrollView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D2FBF3B1AB7FE0F004E52C5 /* AutoSlideScrollView.bundle */; };
@@ -38,8 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5D2FBF341AB7FE0F004E52C5 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
-		5D2FBF351AB7FE0F004E52C5 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
+		5D2FBF341AB7FE0F004E52C5 /* AutoSlideScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoSlideScrollView.h; sourceTree = "<group>"; };
+		5D2FBF351AB7FE0F004E52C5 /* AutoSlideScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoSlideScrollView.m; sourceTree = "<group>"; };
 		5D2FBF361AB7FE0F004E52C5 /* MyPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageControl.h; sourceTree = "<group>"; };
 		5D2FBF371AB7FE0F004E52C5 /* MyPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageControl.m; sourceTree = "<group>"; };
 		5D2FBF381AB7FE0F004E52C5 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
@@ -93,8 +93,8 @@
 		5D2FBF331AB7FE0F004E52C5 /* AutoSlideScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				5D2FBF341AB7FE0F004E52C5 /* CycleScrollView.h */,
-				5D2FBF351AB7FE0F004E52C5 /* CycleScrollView.m */,
+				5D2FBF341AB7FE0F004E52C5 /* AutoSlideScrollView.h */,
+				5D2FBF351AB7FE0F004E52C5 /* AutoSlideScrollView.m */,
 				5D2FBF361AB7FE0F004E52C5 /* MyPageControl.h */,
 				5D2FBF371AB7FE0F004E52C5 /* MyPageControl.m */,
 				5D2FBF381AB7FE0F004E52C5 /* NSTimer+Addition.h */,
@@ -294,7 +294,7 @@
 				5D2FBF3E1AB7FE0F004E52C5 /* NSTimer+Addition.m in Sources */,
 				F7038F14189108A100D69382 /* AppDelegate.m in Sources */,
 				F7038F10189108A100D69382 /* main.m in Sources */,
-				5D2FBF3C1AB7FE0F004E52C5 /* CycleScrollView.m in Sources */,
+				5D2FBF3C1AB7FE0F004E52C5 /* AutoSlideScrollView.m in Sources */,
 				F7038F36189108C700D69382 /* HomeViewController.m in Sources */,
 				5D2FBF3D1AB7FE0F004E52C5 /* MyPageControl.m in Sources */,
 			);

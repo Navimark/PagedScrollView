@@ -1,16 +1,16 @@
 //
-//  CycleScrollView.m
+//  AutoSlideScrollView.m
 //  AutoSlideScrollViewDemo
 //
 //  Created by Mike Chen on 14-1-23.
 //  Copyright (c) 2014年 __MyCompanyName__. All rights reserved.
 //
 
-#import "CycleScrollView.h"
+#import "AutoSlideScrollView.h"
 #import "NSTimer+Addition.h"
 #import "MyPageControl.h"
 
-@interface CycleScrollView () <UIScrollViewDelegate>
+@interface AutoSlideScrollView () <UIScrollViewDelegate>
 {
     CGFloat scrollViewStartContentOffsetX;
 }
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation CycleScrollView
+@implementation AutoSlideScrollView
 
 - (MyPageControl *)pageControl
 {

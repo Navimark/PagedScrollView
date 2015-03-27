@@ -7,13 +7,13 @@
 //
 
 #import "HomeViewController.h"
-#import "CycleScrollView.h"
+#import "AutoSlideScrollView.h"
 
 static const NSInteger kTotalPageCount = 5;
 
 @interface HomeViewController ()
 
-@property (nonatomic , strong) CycleScrollView *mainScorllView;
+@property (nonatomic , strong) AutoSlideScrollView *mainScorllView;
 
 @end
 
@@ -40,7 +40,7 @@ static const NSInteger kTotalPageCount = 5;
         [viewsArray addObject:tempLabel];
     }
     
-    self.mainScorllView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 100, 320, 300) animationDuration:3];
+    self.mainScorllView = [[AutoSlideScrollView alloc] initWithFrame:CGRectMake(0, 100, 320, 300) animationDuration:3];
     self.mainScorllView.backgroundColor = [[UIColor purpleColor] colorWithAlphaComponent:0.1];
     
     self.mainScorllView.totalPagesCount = ^NSInteger(void){
